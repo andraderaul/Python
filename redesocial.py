@@ -82,7 +82,7 @@ class RedeSocial(object):
         self.__unir_amizade()
 
 
-arquivo = open('entrada.txt','r') #leitura
+arquivo = open('redesocial.txt','r') #leitura
 saida = open('saida.txt','w') #escrita
 lista = RedeSocial()
 
