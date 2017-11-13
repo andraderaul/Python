@@ -50,15 +50,18 @@ class RedeSocial(object):
 
     def mostrar(self,nome):
         aux = self.primeiro
-        while aux:
-            if aux.nome == nome: #achamos
-                saida.write("[%s]<-[%s]->[%s]\n" %(aux.proximo.nome,aux.nome,aux.anterior.nome))
-                break
-            else:#nao achamos
-                aux = aux.proximo #proximo
-                if aux == self.primeiro: #caso o usuario nao esteja na rede social
-                    saida.write("[%s] SHOW-ERROR\n" %(nome))
+        if self.vazia(): #caso a lista esteja vazia
+            saida.write("[%s] SHOW-ERROR\n" %(nome))
+        else:#caso tenha algo na lista
+            while aux:
+                if aux.nome == nome: #achamos
+                    saida.write("[%s]<-[%s]->[%s]\n" %(aux.proximo.nome,aux.nome,aux.anterior.nome))
                     break
+                else:#nao achamos
+                    aux = aux.proximo #proximo
+                    if aux == self.primeiro: #caso o usuario nao esteja na rede social
+                        saida.write("[%s] SHOW-ERROR\n" %(nome))
+                        break
 
     def remover(self,nome):
         if self.vazia(): #caso a lista seja vazia
