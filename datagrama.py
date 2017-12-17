@@ -35,12 +35,15 @@ def show(arr,cont,linha,out):
     for i in range(n):
         if cont == arr[i].num:
             if cont == anti :
+                print('%d: ' %(linha),end= '')
                 out.write('%d: ' %(linha))
                 linha += 1
+            print('%s' %(arr[i].dado),end = ' ')
             out.write('%s' %(arr[i].dado))
             cont += 1
 
     if linha != aux:
+        print("")
         out.write('\n')
 
     return cont,linha
