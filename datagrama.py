@@ -34,19 +34,17 @@ def show(arr,cont,linha,out):
     aux = linha
     for i in range(n):
         if cont == arr[i].num:
-            if cont == anti :
-                print('%d: ' %(linha),end= '')
+            if cont == anti:
                 out.write('%d: ' %(linha))
                 linha += 1
-            print('%s' %(arr[i].dado),end = ' ')
-            out.write('%s' %(arr[i].dado))
+            out.write('%s ' %(arr[i].dado))
             cont += 1
 
     if linha != aux:
-        print("")
         out.write('\n')
 
     return cont,linha
+
 
 def readFile():
 
@@ -64,8 +62,9 @@ def readFile():
         for i in range(qpacote):
             line = arq.readline().rstrip()
             if len(line) is not 0:
-                numpac = int(line[0])
-                dado = line[4:len(line)]
+                str_pac = line.split(' ')[0];
+                numpac = int(str_pac)
+                dado = line[len(str_pac)+3:len(line)]
                 pacote = Datagrama(numpac,dado)
                 arr.append(pacote)
 
