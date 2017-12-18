@@ -62,7 +62,7 @@ def readFile():
         for i in range(qpacote):
             line = arq.readline().rstrip()
             if len(line) is not 0:
-                str_pac = line.split(' ')[0];
+                str_pac = line.split(' ')[0]
                 numpac = int(str_pac)
                 dado = line[len(str_pac)+3:len(line)]
                 pacote = Datagrama(numpac,dado)
