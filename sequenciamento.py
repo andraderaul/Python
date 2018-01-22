@@ -66,7 +66,8 @@ def openFile():
                 hit += 1
         disease[name] = int(active_gene(hit,len(subSeq)) * 100) #salva a porcentagem
         hit = 0
-    for item in reversed(sorted(disease)): #imprime o dicionario
+
+    for item in reversed(sorted(disease,key=disease.get)): #imprime o dicionario
         print('%s: %d%%' %(item,disease[item]))
 
 openFile()
