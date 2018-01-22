@@ -21,6 +21,7 @@ def kmp_search(T,P, SUB_CAD):
     temp = 0 #add
     su_m = 0 #add
     tab = kmp_process(P) #add
+    P = P+'$'
     while i < n and len(P) >= SUB_CAD: #add
         while j >= 0 and P[j+1] != T[i]: j = tab[j]
         if P[j+1] == T[i]:
@@ -29,14 +30,14 @@ def kmp_search(T,P, SUB_CAD):
         else: # add
             if temp >= SUB_CAD: #add
                 su_m += temp#temp
-                P = P[SUB_CAD:]+'$' #add
+                P = P[SUB_CAD:] #add
                 tab = kmp_process(P) #add
                 j = - 1   #add
         temp = j + 1 #add
 
         if j == m - 1:
             su_m += j + 1
-            P = P[j:]+'$' #add
+            P = P[j:] #add
             j = tab[j]
             break #add
 
